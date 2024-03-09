@@ -43,7 +43,7 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview ml-2">
               <li class="nav-item">
                 <a href="data_barang.php" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
@@ -66,6 +66,12 @@
                 <a href="data_ruangan.php" class="nav-link">
                   <i class="fas fa-desktop nav-icon"></i>
                   <p>Ruangan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="data_pegawai.php" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>Pegawai</p>
                 </a>
               </li>
             </ul>
