@@ -63,6 +63,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+<<<<<<< HEAD
           <div class="col-md-6">
             <div class="sticky-top mb-3">
             <div class=" card card-outline card-primary">
@@ -70,6 +71,13 @@
                 <h3 class="card-title">
                 <i class="fas fa-bullseye mr-2"></i>
                 Visi Misi</h3>
+=======
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Visi Misi</h3>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -79,6 +87,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+<<<<<<< HEAD
                 <div class="row">
                   <div class="col-md-6">
                     <b>VISI</b>
@@ -97,6 +106,15 @@
                 <h3 class="card-title">
                 <i class="fas fa-calendar-alt mr-2"></i>  
                 Kalender</h3>
+=======
+                The body of the card
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Kalender</h3>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -115,11 +133,19 @@
             <!-- /.card -->
           </div>
           
+<<<<<<< HEAD
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-4 col-sm-6 col-12">
                 <div class="info-box shadow">
                   <span class="info-box-icon bg-primary"><i class="fas fa-box"></i></span>
+=======
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-12">
+                <div class="info-box shadow">
+                  <span class="info-box-icon bg-danger"><i class="fas fa-box"></i></span>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                   <div class="info-box-content">
                     <span class="info-box-text">Barang</span>
@@ -132,7 +158,11 @@
               <!-- /.col -->
               <div class="col-md-4 col-sm-6 col-12">
                 <div class="info-box shadow">
+<<<<<<< HEAD
                   <span class="info-box-icon bg-primary"><i class="fas fa-cube"></i></span>
+=======
+                  <span class="info-box-icon bg-danger"><i class="fas fa-cube"></i></span>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                   <div class="info-box-content">
                     <span class="info-box-text">Kategori Barang</span>
@@ -145,7 +175,11 @@
               <!-- /.col -->
               <div class="col-md-4 col-sm-6 col-12">
                 <div class="info-box shadow">
+<<<<<<< HEAD
                   <span class="info-box-icon bg-primary"><i class="fas fa-building"></i></span>
+=======
+                  <span class="info-box-icon bg-danger"><i class="fas fa-building"></i></span>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                   <div class="info-box-content">
                     <span class="info-box-text">Bidang</span>
@@ -158,7 +192,11 @@
               <!-- /.col -->
               <div class="col-md-4 col-sm-6 col-12">
                 <div class="info-box shadow">
+<<<<<<< HEAD
                   <span class="info-box-icon bg-primary"><i class="fas fa-desktop"></i></span>
+=======
+                  <span class="info-box-icon bg-danger"><i class="fas fa-desktop"></i></span>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                   <div class="info-box-content">
                     <span class="info-box-text">Ruangan</span>
@@ -171,7 +209,11 @@
               <!-- /.col -->
               <div class="col-md-4 col-sm-6 col-12">
                 <div class="info-box shadow">
+<<<<<<< HEAD
                   <span class="info-box-icon bg-primary"><i class="fas fa-users"></i></span>
+=======
+                  <span class="info-box-icon bg-danger"><i class="fas fa-users"></i></span>
+>>>>>>> 69d673b2dcb43ba4f39fa6212d8965f8f70f93a8
 
                   <div class="info-box-content">
                     <span class="info-box-text">Pegawai</span>
