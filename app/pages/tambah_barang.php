@@ -3,15 +3,23 @@
 <?php include ('header.php');?>
 <?php include ('../../conf/config.php');?>
 
-<title>Diskominfo | Tambah Barang</title>
+<title>Diskominfo | Dashboard</title>
+
+<style>
+  .info-box-icon{
+    background-color: #ff7f7f;
+  }
+</style>
 <div class="wrapper">
+
+  <!-- Preloader -->
 
   <!-- Navbar -->
   <?php include ('navbar.php');?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <?php include ('logo.php');?>
 
@@ -27,7 +35,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Barang</h1>
+            <h1 class="m-0"><span style="font-weight: bold;">Barang |</span><span class="fw-normal"> Tambah Barang</span></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -41,134 +49,120 @@
     </div>
     <!-- /.content-header -->
 
-   <!-- Main content -->
-   <section class="content">
-   <div class="card card-default">
-      <div class="card-header">
-        <h3 class="card-title">Select2 (Default Theme)</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+        <!-- form tambah kategori-->
+        <form action="" method="post">
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Silahkan diisi dengan lengkap</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Minimal</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <label for="id_barang">Id Barang</label>
+                  <input type="text" class="form-control" name="id_barang" required>
                 </div>
-                <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Disabled</label>
-                  <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                  <label for="nama_barang">Nama Barang</label>
+                  <input type="text" class="form-control" name="nama_barang" required>
+                </div>
+                <div class="form-group">
+                  <label for="kategori">Kategori</label>
+                  <select class="form-control" name="kategori" required>
+                    <option value="">Pilih Kategori</option>
+                      <?php
+                      $kategori = "SELECT * FROM tb_kategori";
+                      $qkategori = mysqli_query($koneksi, $kategori);
+
+                        if ($qkategori) {
+                        while ($row = mysqli_fetch_assoc($qkategori)) {
+                        ?>
+                        <option value="<?php echo $row['id_kategori']; ?>">
+                            <?php echo $row['nama_kategori']; ?>
+                        </option>
+                        <?php
+                        }
+                            mysqli_free_result($qkategori);
+                        } else {
+                            echo "Error: " . $kategori . "<br>" . mysqli_error($koneksi);
+                        }
+                        mysqli_close($koneksi);
+                        ?>
                   </select>
                 </div>
-                <!-- /.form-group -->
+                <div class="form-group">
+                    <label for="merek">Merek</label>
+                    <input type="text" class="form-control" name="merek" required>
+                </div>
+                <div class="form-group">
+                    <label for="noseri">No Seri</label>
+                    <input type="text" class="form-control" name="no_seri" required>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="text" class="form-control" name="jumlah" required>
+                </div>
+                <div class="form-group">
+                    <label for="ukuran">Ukuran</label>
+                    <input type="text" class="form-control" name="ukuran" required>
+                </div>
               </div>
-              <!-- /.col -->
+
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Multiple</label>
-                  <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                    <option>Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <label for="bahan">Bahan</label>
+                  <input type="text" class="form-control" name="bahan" required>
                 </div>
-                <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Disabled Result</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option disabled="disabled">California (disabled)</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <label for="harga">Harga</label>
+                  <input type="text" class="form-control" name="harga" required>
                 </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-            <h5>Custom Color Variants</h5>
-            <div class="row">
-              <div class="col-12 col-sm-6">
                 <div class="form-group">
-                  <label>Minimal (.select2-danger)</label>
-                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6">
-                <div class="form-group">
-                  <label>Multiple (.select2-purple)</label>
-                  <div class="select2-purple">
-                    <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                      <option>Alabama</option>
-                      <option>Alaska</option>
-                      <option>California</option>
-                      <option>Delaware</option>
-                      <option>Tennessee</option>
-                      <option>Texas</option>
-                      <option>Washington</option>
+                  <label for="kondisi">Kondisi</label>
+                    <select class="form-control" name="kondisi" required>
+                      <option value="">Pilih Kondisi</option>
+                      <option value="baik">Baik</option>
+                      <option value="kurang baik">Kurang Baik</option>
+                      <option value="rusak">Rusak</option>
                     </select>
-                  </div>
                 </div>
-                <!-- /.form-group -->
               </div>
-              <!-- /.col -->
             </div>
-            <!-- /.row -->
           </div>
           <!-- /.card-body -->
-          <div class="card-footer">
-            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-            the plugin.
+          <div class="card-footer bg-white">
+            <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+            <?php
+            if (isset($_POST["simpan"])) {
+                $idkategori=$_POST["id_kategori"];
+                $namakategori=$_POST["nama_kategori"];
+
+                $tambah = "INSERT INTO tb_kategori (id_kategori, nama_kategori) VALUES ('$idkategori', '$namakategori')";
+
+                $qtambah= mysqli_query($koneksi, $tambah);
+
+                if ($qtambah) {
+                    echo "<script>window.location.href = 'data_kategori.php';</script>";
+                } else {
+                    echo 'Tidak bisa pindah';
+                }
+            }
+            ?>
           </div>
         </div>
+        </form>
         <!-- /.card -->
-   </section>
+
+        </div>
+    </section>
+    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <?php include ('footer.php');?>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -177,7 +171,4 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
-
-</body>
 </html>

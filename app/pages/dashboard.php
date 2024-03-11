@@ -4,6 +4,12 @@
 <?php include ('../../conf/config.php');?>
 
 <title>Diskominfo | Dashboard</title>
+
+<style>
+  .info-box-icon{
+    background-color: #ff7f7f;
+  }
+</style>
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -13,7 +19,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <?php include ('logo.php');?>
 
@@ -33,16 +39,15 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">Home</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
     <?php
-    include ('../../conf/config.php'); 
     $get1 = mysqli_query($koneksi, "SELECT * FROM tb_barang");
     $count1 = mysqli_num_rows($get1);
 
@@ -63,139 +68,92 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-md-6">
-            <div class="sticky-top mb-3">
-            <div class=" card card-outline card-primary">
-              <div class="card-header">
-                <h3 class="card-title">
-                <i class="fas fa-bullseye mr-2"></i>
-                Visi Misi</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="info-box shadow">
+              <span class="info-box-icon"><i class="fas fa-bullseye"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Visi Misi</span>
+                <span class="info-box-number">Hai</span>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <b>VISI</b>
-                    <p>1. hdgfadyuifskf</p>
-                    <p>2. bhfidlsdfsbghn</p>
-                  </div>
-                  <div class="col-md-6">
-                    frgdthfgjfhd
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-body -->
+              <!-- /.info-box-content -->
             </div>
-            <div class=" card card-outline card-primary">
-              <div class="card-header">
-                <h3 class="card-title">
-                <i class="fas fa-calendar-alt mr-2"></i>  
-                Kalender</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shadows</span>
+                <span class="info-box-number"><?=$count2?></span>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div id="calendar"></div>
-              </div>
-              <!-- /.card-body -->
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon "><i class="far fa-copy"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shadows</span>
+                <span class="info-box-number"><?=$count3?></span>
+              </div>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
 
-            <!-- /.card -->
-          </div>
-          
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-4 col-sm-6 col-12">
-                <div class="info-box shadow">
-                  <span class="info-box-icon bg-primary"><i class="fas fa-box"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Barang</span>
-                    <span class="info-box-number"><?=$count1?> Barang</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
+              <div class="info-box-content">
+                <span class="info-box-text">Shadows</span>
+                <span class="info-box-number"><?=$count4?></span>
               </div>
-              <!-- /.col -->
-              <div class="col-md-4 col-sm-6 col-12">
-                <div class="info-box shadow">
-
-                  <span class="info-box-icon bg-primary"><i class="fas fa-cube"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Kategori Barang</span>
-                    <span class="info-box-number"><?=$count2?> Kategori</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-md-4 col-sm-6 col-12">
-                <div class="info-box shadow">
-
-                  <span class="info-box-icon bg-primary"><i class="fas fa-building"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Bidang</span>
-                    <span class="info-box-number"><?=$count3?> Bidang</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-md-4 col-sm-6 col-12">
-                <div class="info-box shadow">
-
-                  <span class="info-box-icon bg-primary"><i class="fas fa-desktop"></i></span>
-
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Ruangan</span>
-                    <span class="info-box-number"><?=$count4?> Ruangan</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-md-4 col-sm-6 col-12">
-                <div class="info-box shadow">
-                  <span class="info-box-icon bg-primary"><i class="fas fa-users"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Pegawai</span>
-                    <span class="info-box-number"><?=$count5?> Pegawai</span>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
+              <!-- /.info-box-content -->
             </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.col-md-9 -->
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shadows</span>
+                <span class="info-box-number"><?=$count5?></span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shadows</span>
+                <span class="info-box-number">Regular</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <?php include ('footer.php');?>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -204,7 +162,4 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
-
-</body>
 </html>

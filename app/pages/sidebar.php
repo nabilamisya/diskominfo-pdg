@@ -43,7 +43,7 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview ml-2">
+            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="data_barang.php" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
