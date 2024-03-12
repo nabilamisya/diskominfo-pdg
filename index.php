@@ -25,7 +25,7 @@
       <img src="app/dist/img/DiskominfoPDG-blck.svg" alt="Logo" style="width: 200px; height: 100px;">
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Please log in to start your session</p>
+      <p class="login-box-msg">Silahkan masuk untuk melanjutkkan sesi</p>
 
       <form action="conf/auth.php" method="post">
         <div class="input-group mb-3">

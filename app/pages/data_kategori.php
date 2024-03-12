@@ -73,7 +73,7 @@
 
                         <td style="text-align: center;">                    
                             <div class="btn-group">
-                            <a href="edit_kategori.php?id_lkategori=<?=$kategori ['id_kategori']?>" class="btn btn-warning">
+                            <a href="edit_kategori.php?id_kategori=<?=$kategori ['id_kategori']?>" class="btn btn-warning">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             <a href="hapus_kategori.php?id_kategori=<?=$kategori ['id_kategori']?>" class="btn btn-danger">

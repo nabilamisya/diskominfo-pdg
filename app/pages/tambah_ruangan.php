@@ -3,7 +3,7 @@
 <?php include ('header.php');?>
 <?php include ('../../conf/config.php');?>
 
-<title>Diskominfo | Tambah Bidang</title>
+<title>Diskominfo | Tambah Ruangan</title>
 
 <div class="wrapper">
 
@@ -30,12 +30,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><span style="font-weight: bold;">Bidang |</span><span class="fw-normal"> Tambah Bidang</span></h1>
+            <h1 class="m-0"><span style="font-weight: bold;">Ruangan |</span><span class="fw-normal"> Tambah Ruangan</span></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="data_kategori.php">Bidang</a></li>
+              <li class="breadcrumb-item"><a href="data_ruangan.php">Ruangan</a></li>
               <li class="breadcrumb-item active">Tambah Bidang</li>
             </ol>
           </div><!-- /.col -->
@@ -56,16 +56,33 @@
           <!-- /.card-header -->
           <div class="card-body">
           <div class="form-group">
-            <label for="id_bidang">Id Bidang</label>
-            <input type="text" class="form-control" name="id_bidang" required>
+            <label for="id_ruangan">Id Ruangan</label>
+            <input type="text" class="form-control" name="id_ruangan" required>
           </div>
           <div class="form-group">
-            <label for="nama_bidang">Nama Bidang</label>
-            <input type="text" class="form-control" name="nama_bidang" required>
+            <label for="nama_ruangan">Nama Ruangan</label>
+            <input type="text" class="form-control" name="nama_ruangan" required>
           </div>
           <div class="form-group">
-            <label for="lokasi">Lokasi</label>
-            <input type="text" class="form-control" name="lokasi" required>
+            <label for="id_bidang">Bidang</label>
+            <select class="form-control" name="id_bidang" required>
+                <option value="">Pilih Bidang</option>
+                <?php
+                  $query = "SELECT * FROM tb_bidang";
+                  $result = mysqli_query($koneksi, $query);
+                        
+                    if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                      <option value="<?php echo $row['id_bidang']; ?>"><?php echo $row['nama_bidang']; ?></option>
+                    <?php
+                    }
+                      mysqli_free_result($result);
+                    } else {
+                      echo "Error: " . $query . "<br>" . mysqli_error($koneksi);
+                    }
+                    ?>
+            </select>
           </div>
           </div>
           <!-- /.card-body -->
@@ -73,19 +90,18 @@
             <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
             <?php
             if (isset($_POST["simpan"])) {
-                $idbidang=$_POST["id_bidang"];
-                $namabidang=$_POST["nama_bidang"];
-                $lokasibidang=$_POST["lokasi"];
+              $idruangan = $_POST["id_ruangan"];
+              $namaruangan = $_POST["nama_ruangan"];
+              $idbidang = $_POST["id_bidang"];
 
-                $tambah = "INSERT INTO tb_bidang (id_bidang, nama_bidang, lokasi) VALUES ('$idbidang', '$namabidang', '$lokasibidang')";
+              $tambah = "INSERT INTO tb_ruangan (id_ruangan, nama_ruangan, id_bidang) VALUES ('$idruangan', '$namaruangan', '$idbidang')";
+              $qtambah = mysqli_query($koneksi, $tambah);
 
-                $qtambah= mysqli_query($koneksi, $tambah);
-
-                if ($qtambah) {
-                    echo "<script>window.location.href = 'data_bidang.php';</script>";
-                } else {
-                    echo 'Tidak bisa pindah';
-                }
+              if ($qtambah) {
+                  echo "<script>window.location.href = 'data_ruangan.php';</script>";
+              } else {
+                  echo 'Tidak bisa menambah data ruangan.';
+              }
             }
             ?>
           </div>

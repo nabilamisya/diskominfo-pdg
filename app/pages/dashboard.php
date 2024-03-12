@@ -5,11 +5,6 @@
 
 <title>Diskominfo | Dashboard</title>
 
-<style>
-  .info-box-icon{
-    background-color: #ff7f7f;
-  }
-</style>
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -62,6 +57,9 @@
 
     $get5 = mysqli_query($koneksi, "SELECT * FROM tb_pegawai");
     $count5 = mysqli_num_rows($get5);
+
+    $get6 = mysqli_query($koneksi, "SELECT * FROM tb_mutasi");
+    $count6 = mysqli_num_rows($get6);
     ?>
     <!-- Main content -->
     <section class="content">
@@ -73,8 +71,8 @@
               <span class="info-box-icon"><i class="fas fa-bullseye"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Visi Misi</span>
-                <span class="info-box-number">Hai</span>
+                <span class="info-box-text"><b>Visi Misi</b></span>
+                <span class="info-box-text">Hai</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -83,12 +81,30 @@
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box shadow">
-              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+              <span class="info-box-icon"><i class="fas fa-box"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Barang</span>
+                <span class="info-box-number"><?=$count1?></span>
+              </div>
+              <a href="data_barang.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box shadow">
+              <span class="info-box-icon"><i class="fas fa-cube"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Shadows</span>
+                <span class="info-box-text">Kategori Barang</span>
                 <span class="info-box-number"><?=$count2?></span>
               </div>
+              <a href="data_kategori.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -96,12 +112,15 @@
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box shadow">
-              <span class="info-box-icon "><i class="far fa-copy"></i></span>
+              <span class="info-box-icon"><i class="fas fa-building"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Shadows</span>
+                <span class="info-box-text">Bidang</span>
                 <span class="info-box-number"><?=$count3?></span>
               </div>
+              <a href="data_bidang.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -109,12 +128,15 @@
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box shadow">
-              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+              <span class="info-box-icon"><i class="fas fa-desktop"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Shadows</span>
+                <span class="info-box-text">Ruangan</span>
                 <span class="info-box-number"><?=$count4?></span>
               </div>
+              <a href="data_ruangan.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -122,12 +144,15 @@
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box shadow">
-              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+              <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Shadows</span>
+                <span class="info-box-text">Pegawai</span>
                 <span class="info-box-number"><?=$count5?></span>
               </div>
+              <a href="data_pegawai.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -135,12 +160,15 @@
         <!-- /.col -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box shadow">
-              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+              <span class="info-box-icon"><i class="fas fa-exchange-alt"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Shadows</span>
-                <span class="info-box-number">Regular</span>
+                <span class="info-box-text">Mutasi</span>
+                <span class="info-box-number"><?=$count6?></span>
               </div>
+              <a href="data_mutasi.php" class="info-box-icon bg-white">
+                <i class="fas fa-angle-right"></i>
+              </a>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->

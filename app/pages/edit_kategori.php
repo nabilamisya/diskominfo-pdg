@@ -2,8 +2,22 @@
 <html lang="en">
 <?php include ('header.php');?>
 <?php include ('../../conf/config.php');?>
+<?php
+if (isset($_GET["id_kategori"])) {
+  $kategoriupdate = $_GET["id_kategori"];
+              
+  $result = mysqli_query($koneksi, "SELECT * FROM tb_kategori WHERE id_kategori='$kategoriupdate'");
+  $data = mysqli_fetch_assoc($result);
+            
+if (!$data) {
+  echo "Data tidak ditemukan";
+}
+} else {
+  echo "ID tidak diberikan";
+}
+?>
 
-<title>Diskominfo | Tambah Bidang</title>
+<title>Diskominfo | Edit Kategori</title>
 
 <div class="wrapper">
 
@@ -30,13 +44,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><span style="font-weight: bold;">Bidang |</span><span class="fw-normal"> Tambah Bidang</span></h1>
+            <h1 class="m-0"><span style="font-weight: bold;">Kategori |</span><span class="fw-normal"> Edit Kategori</span></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="data_kategori.php">Bidang</a></li>
-              <li class="breadcrumb-item active">Tambah Bidang</li>
+              <li class="breadcrumb-item"><a href="data_kategori.php">Kategori</a></li>
+              <li class="breadcrumb-item active">Edit Kategori</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -51,41 +65,36 @@
         <form action="" method="post">
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Silahkan diisi dengan lengkap</h3>
+            <h3 class="card-title">Silahkan di perbarui</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
           <div class="form-group">
-            <label for="id_bidang">Id Bidang</label>
-            <input type="text" class="form-control" name="id_bidang" required>
+            <label for="id_kategori">ID Kategori</label>
+            <input type="text" class="form-control" name="id_kategori" value="<?php echo $data['id_kategori'] ?>" required>
           </div>
           <div class="form-group">
-            <label for="nama_bidang">Nama Bidang</label>
-            <input type="text" class="form-control" name="nama_bidang" required>
-          </div>
-          <div class="form-group">
-            <label for="lokasi">Lokasi</label>
-            <input type="text" class="form-control" name="lokasi" required>
+            <label for="nama_kategori">Nama Kategori</label>
+            <input type="text" class="form-control" name="nama_kategori" value="<?php echo $data['nama_kategori'] ?>" required>
           </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer bg-white">
-            <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+            <button type="submit" class="btn btn-primary" name="update">Perbarui</button>
             <?php
-            if (isset($_POST["simpan"])) {
-                $idbidang=$_POST["id_bidang"];
-                $namabidang=$_POST["nama_bidang"];
-                $lokasibidang=$_POST["lokasi"];
+            if (isset($_POST["update"])) {
+              $idkategori = $_POST["id_kategori"];
+              $namakategori = $_POST["nama_kategori"];
 
-                $tambah = "INSERT INTO tb_bidang (id_bidang, nama_bidang, lokasi) VALUES ('$idbidang', '$namabidang', '$lokasibidang')";
+              $update = "UPDATE tb_kategori SET nama_kategori='$namakategori' WHERE id_kategori='$idkategori'";
+              $qupdate = mysqli_query($koneksi, $update);
 
-                $qtambah= mysqli_query($koneksi, $tambah);
-
-                if ($qtambah) {
-                    echo "<script>window.location.href = 'data_bidang.php';</script>";
-                } else {
-                    echo 'Tidak bisa pindah';
-                }
+              if ($qupdate) {
+                  echo "<script>window.location.href = 'data_kategori.php';</script>";
+                  exit(); // Menambahkan exit setelah redirect
+              } else {
+                echo "Error updating record: " . mysqli_error($koneksi);
+            }
             }
             ?>
           </div>

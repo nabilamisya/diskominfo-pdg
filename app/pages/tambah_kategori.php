@@ -3,13 +3,8 @@
 <?php include ('header.php');?>
 <?php include ('../../conf/config.php');?>
 
-<title>Diskominfo | Dashboard</title>
+<title>Diskominfo | Tambah Ketegori</title>
 
-<style>
-  .info-box-icon{
-    background-color: #ff7f7f;
-  }
-</style>
 <div class="wrapper">
 
   <!-- Preloader -->
