@@ -162,7 +162,7 @@ if (isset($_GET["id_barang"])) {
 
                                     $qupdatebrg = mysqli_query($koneksi, "UPDATE tb_barang SET id_bidang='$idbidang', tgl_input='$tglinput', id_ruangan='$idruangan', nip='$nip' WHERE id_barang='$idbarang'");
                                     if ($qupdatebrg) {
-                                        echo "<script>window.location.href = 'riwayat_mutasi.php';</script>";
+                                        echo "<script>window.location.href = 'index.php?page=data-barang';</script>";
                                     } else {
                                         echo mysqli_error($koneksi);
                                     }
