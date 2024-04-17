@@ -54,11 +54,18 @@
               <p>Pegawai</p>
             </a>
           </li>
-          <li class="nav-header">LAINNYA</li>
+          <li class="nav-header">TRANSAKSI</li>
           <li class="nav-item">
             <a href="index.php?page=data-mutasi" class="nav-link">
               <i class="fas fa-exchange-alt nav-icon"></i>
               <p>Mutasi</p>
+            </a>
+          </li>
+          <li class="nav-header">LAINNYA</li>
+          <li class="nav-item">
+            <a href="../index.php" class="nav-link">
+              <i class="fas fa-sign-out-alt nav-icon"></i>
+              <p>LogOut</p>
             </a>
           </li>
         </ul>
