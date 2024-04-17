@@ -31,7 +31,6 @@
                             Table Data Bidang
                         </h3>
                         <a href="index.php?add=tambah-bidang" class="btn btn-sm btn-success float-right"><i class="fas fa-plus" style="margin-right: 10px;"></i>Tambah</a>
-                        <a href="index.php?add=cetak-kategori" class="btn btn-sm btn-primary float-right mr-1"><i class="fas fa-print" style="margin-right: 10px;"></i>Cetak</a>
                     </div>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
